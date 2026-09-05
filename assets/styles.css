@@ -317,6 +317,26 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
 }
 .stats + .card-meta { padding-top: .95rem; }
 
+.card-links, .pub-links {
+  list-style: none; display: flex; flex-wrap: wrap; gap: .45rem;
+  margin: 1.1rem 0 0;
+}
+.pub-links { margin-top: .55rem; }
+.card-links { margin-top: auto; padding-top: 1.1rem; }
+.stats + .card-links { padding-top: .95rem; }
+
+.card-links a, .pub-links a {
+  display: inline-block;
+  font-size: .75rem; font-weight: 500; color: var(--ink-soft);
+  background: var(--bg-alt); border: 1px solid var(--line);
+  padding: .28rem .6rem; border-radius: 7px;
+  transition: border-color .18s, color .18s, background-color .18s;
+}
+.card-links a:hover, .pub-links a:hover {
+  text-decoration: none; color: var(--accent);
+  border-color: var(--accent); background: var(--accent-soft);
+}
+
 /* ---------- timeline ---------- */
 
 .timeline { display: grid; gap: 2.6rem; }
@@ -435,17 +455,93 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
 
 /* ---------- contact ---------- */
 
-.contact { text-align: center; }
-.contact-head { font-size: clamp(1.8rem, 5vw, 2.8rem); letter-spacing: -0.035em; margin-bottom: 1rem; }
-.contact-lede { max-width: 48ch; margin-inline: auto; color: var(--ink-soft); margin-bottom: 2rem; }
-.contact-mail { margin-bottom: 2rem; }
-.contact-mail a {
-  font-size: clamp(1.05rem, 3vw, 1.45rem); font-weight: 500;
-  color: var(--ink); border-bottom: 2px solid var(--accent); padding-bottom: 3px;
-  word-break: break-word;
+.contact-wrap {
+  display: grid; gap: clamp(2.5rem, 6vw, 4rem);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+  align-items: start;
 }
-.contact-mail a:hover { color: var(--accent); text-decoration: none; }
-.contact-links { justify-content: center; }
+@media (max-width: 880px) { .contact-wrap { grid-template-columns: 1fr; } }
+
+.contact-intro p { color: var(--ink-soft); max-width: 46ch; }
+.contact-intro .section-head { margin-bottom: 1.5rem; }
+
+.contact-profiles {
+  list-style: none; display: flex; flex-wrap: wrap; gap: .6rem;
+  margin-top: 1rem;
+}
+.contact-profiles a {
+  display: inline-flex; align-items: center; gap: .5rem;
+  padding: .5rem .9rem;
+  border: 1px solid var(--line); border-radius: 999px;
+  background: var(--surface); color: var(--ink-soft);
+  font-size: .85rem; font-weight: 500;
+  transition: border-color .18s, color .18s, transform .18s;
+}
+.contact-profiles a:hover {
+  text-decoration: none; color: var(--ink);
+  border-color: var(--accent); transform: translateY(-1px);
+}
+.contact-profiles svg { width: 15px; height: 15px; fill: currentColor; flex-shrink: 0; }
+
+/* ---------- contact form ---------- */
+
+.contact-form-wrap {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: clamp(1.4rem, 4vw, 2rem);
+  box-shadow: var(--shadow);
+}
+
+.field { margin-bottom: 1.15rem; }
+.field label {
+  display: block;
+  font-size: .82rem; font-weight: 500; color: var(--ink);
+  margin-bottom: .4rem;
+}
+.field input, .field textarea {
+  width: 100%;
+  padding: .7rem .85rem;
+  border: 1px solid var(--line-strong); border-radius: 9px;
+  background: var(--bg); color: var(--ink);
+  font-family: inherit; font-size: .92rem; line-height: 1.5;
+  transition: border-color .18s, box-shadow .18s;
+}
+.field textarea { resize: vertical; min-height: 120px; }
+.field input:focus, .field textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-soft);
+}
+.field input[aria-invalid="true"], .field textarea[aria-invalid="true"] {
+  border-color: #c0392b;
+}
+:root[data-theme="dark"] .field input[aria-invalid="true"],
+:root[data-theme="dark"] .field textarea[aria-invalid="true"] {
+  border-color: #e57373;
+}
+.field-hint { font-size: .75rem; color: var(--ink-faint); margin: .4rem 0 0; }
+.field-error { font-size: .75rem; color: #c0392b; margin: .35rem 0 0; }
+:root[data-theme="dark"] .field-error { color: #e57373; }
+
+/* Honeypot: off-screen rather than display:none, which some bots detect. */
+.hp {
+  position: absolute; left: -9999px; width: 1px; height: 1px;
+  overflow: hidden;
+}
+
+.btn-block { width: 100%; }
+.btn[disabled] { opacity: .6; cursor: not-allowed; }
+.btn[disabled]:hover { transform: none; box-shadow: none; }
+
+.form-status {
+  margin: .9rem 0 0; font-size: .85rem; line-height: 1.5;
+  min-height: 1.2em;
+}
+.form-status:empty { margin-top: 0; min-height: 0; }
+.form-status.is-ok { color: var(--accent); }
+.form-status.is-error { color: #c0392b; }
+:root[data-theme="dark"] .form-status.is-error { color: #e57373; }
 
 /* ---------- footer ---------- */
 
@@ -473,7 +569,8 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
 /* ---------- print ---------- */
 
 @media print {
-  .site-header, .theme-toggle, .hero-actions, #morePubs, .site-footer { display: none; }
+  .site-header, .theme-toggle, .hero-actions, #morePubs,
+  .contact-form-wrap, .site-footer { display: none; }
   body { background: #fff; color: #000; }
   .section, .hero { padding-block: 1.2rem; }
   .reveal { opacity: 1; transform: none; }

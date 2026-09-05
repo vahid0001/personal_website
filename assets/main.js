@@ -108,6 +108,107 @@
     });
   }
 
+
+  /* ---------- contact form ----------
+     Submissions go through Formspree, so no email address appears anywhere in
+     this page's source. Replace FORM_ENDPOINT with your own form URL — see the
+     README for the two-minute setup. */
+
+  var FORM_ENDPOINT = 'https://formspree.io/f/YOUR_FORM_ID';
+
+  var form = document.getElementById('contactForm');
+  if (form) {
+    var submitBtn = document.getElementById('cf-submit');
+    var status = document.getElementById('cf-status');
+
+    var setStatus = function (message, kind) {
+      status.textContent = message;
+      status.className = 'form-status' + (kind ? ' is-' + kind : '');
+    };
+
+    var clearErrors = function () {
+      Array.prototype.forEach.call(form.querySelectorAll('.field-error'), function (el) {
+        el.remove();
+      });
+      Array.prototype.forEach.call(form.querySelectorAll('[aria-invalid]'), function (el) {
+        el.removeAttribute('aria-invalid');
+      });
+    };
+
+    var showError = function (field, message) {
+      field.setAttribute('aria-invalid', 'true');
+      var note = document.createElement('p');
+      note.className = 'field-error';
+      note.textContent = message;
+      field.parentNode.appendChild(note);
+    };
+
+    // Deliberately permissive: catches typos like a missing @ without rejecting
+    // the many valid addresses a stricter pattern would refuse.
+    var looksLikeEmail = function (value) {
+      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+    };
+
+    var validate = function () {
+      clearErrors();
+      var name = form.elements.name;
+      var email = form.elements.email;
+      var message = form.elements.message;
+      var firstBad = null;
+
+      if (!name.value.trim()) { showError(name, 'Please tell me your name.'); firstBad = firstBad || name; }
+      if (!email.value.trim()) {
+        showError(email, 'An email address lets me reply.');
+        firstBad = firstBad || email;
+      } else if (!looksLikeEmail(email.value.trim())) {
+        showError(email, 'That address looks incomplete.');
+        firstBad = firstBad || email;
+      }
+      if (!message.value.trim()) { showError(message, 'Your message is empty.'); firstBad = firstBad || message; }
+
+      if (firstBad) firstBad.focus();
+      return !firstBad;
+    };
+
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+      setStatus('', null);
+
+      if (!validate()) return;
+
+      if (FORM_ENDPOINT.indexOf('YOUR_FORM_ID') !== -1) {
+        setStatus('This form isn\u2019t connected to a backend yet. Please reach out on LinkedIn in the meantime.', 'error');
+        return;
+      }
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending…';
+
+      fetch(FORM_ENDPOINT, {
+        method: 'POST',
+        headers: { Accept: 'application/json' },
+        body: new FormData(form)
+      }).then(function (response) {
+        if (response.ok) {
+          form.reset();
+          setStatus('Thanks — your message is on its way. I\u2019ll reply by email.', 'ok');
+        } else {
+          return response.json().then(function (data) {
+            var detail = data && data.errors && data.errors.length
+              ? data.errors.map(function (e) { return e.message; }).join(', ')
+              : 'Something went wrong sending that.';
+            setStatus(detail + ' Please try again, or reach me on LinkedIn.', 'error');
+          });
+        }
+      }).catch(function () {
+        setStatus('That didn\u2019t send — check your connection and try again, or reach me on LinkedIn.', 'error');
+      }).then(function () {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Send message';
+      });
+    });
+  }
+
   /* ---------- footer year ---------- */
 
   var year = document.getElementById('year');

@@ -4,39 +4,70 @@ A static portfolio site for an ML / AI engineer. No build step, no dependencies,
 no framework — three files that any static host can serve.
 
 ```
-index.html                          all content
-assets/styles.css                   design tokens + layout (light & dark)
-assets/main.js                      theme toggle, scroll reveal, nav state, publication expander
-assets/Vahid-Reza-Khazaie-Resume.pdf
-.nojekyll                           tells GitHub Pages to serve files as-is
+index.html            all content
+assets/styles.css     design tokens + layout (light & dark)
+assets/main.js        theme toggle, scroll reveal, nav state, publication expander, contact form
+.nojekyll             tells GitHub Pages to serve files as-is
 ```
 
-## Hosting: GitHub Pages
+No email address, phone number, or résumé PDF appears anywhere in the source.
+Visitors reach out through the contact form, and the form provider holds the
+destination address privately.
 
-This repo is set up for GitHub Pages, which is free, needs no account beyond
-GitHub, and serves straight from a branch.
+## 1. Connect the contact form
+
+The form posts to [Formspree](https://formspree.io), which forwards submissions
+to your inbox without your address ever appearing in the page. Free tier: 50
+submissions a month.
+
+1. Sign up at formspree.io with the email you want messages delivered to.
+2. Create a new form. You'll get an endpoint like `https://formspree.io/f/xyzabcde`.
+3. In `assets/main.js`, replace the placeholder:
+
+   ```js
+   var FORM_ENDPOINT = 'https://formspree.io/f/YOUR_FORM_ID';
+   ```
+
+4. Commit and push.
+
+Until you do this the form validates input normally but shows a message pointing
+visitors to LinkedIn instead of failing silently.
+
+Formspree's dashboard has reCAPTCHA and spam filtering if the honeypot field
+already in the form isn't enough. [Web3Forms](https://web3forms.com) is a drop-in
+alternative with unlimited submissions if you outgrow the free tier — same
+approach, different endpoint.
+
+## 2. Publish on GitHub Pages
+
+Free, no build minutes, and it serves straight from a branch.
 
 **Enable it:** repo → **Settings** → **Pages** → *Source: Deploy from a branch* →
-pick the branch and the `/ (root)` folder → **Save**. The site is live in about
-a minute.
+pick the branch and the `/ (root)` folder → **Save**. Live in about a minute.
 
-### Which URL you get
+### Getting your full name into the URL
 
-| Repository name | URL |
-| --- | --- |
-| `personal_website` (current) | `https://vahid0001.github.io/personal_website/` |
-| `vahid0001.github.io` | `https://vahid0001.github.io/` |
+The URL comes from your GitHub **username**, not the repository name. A repo
+named `<username>.github.io` is served at the root of that username's domain:
 
-Renaming the repo to `vahid0001.github.io` is the cleaner option — it's a
-one-click rename under **Settings → General**, GitHub redirects the old URL, and
-nothing in this codebase needs to change (every path here is relative).
+| GitHub username | Repository name | Resulting URL |
+| --- | --- | --- |
+| `vahid0001` | `personal_website` | `vahid0001.github.io/personal_website/` |
+| `vahid0001` | `vahid0001.github.io` | `vahid0001.github.io/` |
+| `vahidrezakhazaie` | `vahidrezakhazaie.github.io` | `vahidrezakhazaie.github.io/` |
 
-### Custom domain
+So a full-name URL means renaming the **account** under
+**Settings → Account → Change username**, then naming the repo to match. GitHub
+redirects your old profile and repo links, though any hardcoded links others
+have to your old username eventually go stale.
 
-If you buy a domain later (e.g. `vahidkhazaie.com`), add it under
-**Settings → Pages → Custom domain**, point a `CNAME` DNS record at
-`vahid0001.github.io`, and tick *Enforce HTTPS*. GitHub issues the certificate
-for free.
+A custom domain avoids the username question entirely and reads better on a
+résumé: buy `vahidrezakhazaie.com` (roughly $10–15/year), add it under
+**Settings → Pages → Custom domain**, point a DNS `CNAME` record at
+`<username>.github.io`, and tick *Enforce HTTPS*. GitHub issues the certificate
+free.
+
+Nothing in this codebase depends on the name either way — every path is relative.
 
 ## Working on it locally
 
@@ -45,20 +76,18 @@ python3 -m http.server 8000
 # then open http://localhost:8000
 ```
 
-Opening `index.html` directly with `file://` works too, but a local server
-matches how it behaves once deployed.
-
 ## Updating content
 
 Everything lives in `index.html` — there is no CMS or data file to keep in sync.
 
 - **New publication** — copy an existing `<li class="pub">` block in the
   `#publications` section. Add `class="pub reveal is-more" hidden` if it should
-  sit behind the *Show earlier publications* button.
+  sit behind the *Show earlier publications* button. The `<ul class="pub-links">`
+  row holds the arXiv / Code / DOI chips; drop the whole `<ul>` if there's no link yet.
 - **New role** — copy a `<div class="tl-role">` block inside the relevant
   `<article class="tl-org">` in `#experience`.
-- **New project** — copy an `<article class="card">` block in `#work`.
-- **Résumé** — replace `assets/Vahid-Reza-Khazaie-Resume.pdf`, keeping the filename.
+- **New project** — copy an `<article class="card">` block in `#work`. Its
+  `<ul class="card-links">` row holds the repo and paper links.
 
 ## Design notes
 
