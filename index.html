@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vahid Reza Khazaie — Machine Learning Engineer</title>
+<meta name="description" content="Machine Learning Engineer at the Vector Institute working on LLM and multimodal model evaluation, self-supervised learning, and agentic AI systems. 15+ peer-reviewed publications.">
+<meta name="author" content="Vahid Reza Khazaie">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Vahid Reza Khazaie — Machine Learning Engineer">
+<meta property="og:description" content="LLM and multimodal evaluation, self-supervised learning, and agentic AI systems at the Vector Institute.">
+<meta name="twitter:card" content="summary">
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%230f172a'/><text y='.9em' x='50%25' text-anchor='middle' font-size='58' font-family='Georgia,serif' fill='%23fff'>V</text></svg>">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+
+<script>
+// Set the theme before first paint so dark-mode visitors never see a light flash.
+(function () {
+  try {
+    var t = localStorage.getItem('vk-theme');
+    if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    document.documentElement.setAttribute('data-theme', t);
+  } catch (e) {
+    document.documentElement.setAttribute('data-theme', 'light');
+  }
+})();
+</script>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header" id="siteHeader">
+  <div class="wrap header-inner">
+    <a class="brand" href="#top">
+      <span class="brand-mark">VK</span>
+      <span class="brand-name">Vahid Reza Khazaie</span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="#work">Work</a>
+      <a href="#experience">Experience</a>
+      <a href="#publications">Publications</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch colour theme">
+      <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.6M12 19.4V22M2 12h2.6M19.4 12H22M4.9 4.9l1.9 1.9M17.2 17.2l1.9 1.9M19.1 4.9l-1.9 1.9M6.8 17.2l-1.9 1.9"/></svg>
+      <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.4A8.5 8.5 0 1 1 9.6 4a6.8 6.8 0 0 0 10.4 10.4Z"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ───────────────────────── HERO ───────────────────────── -->
+  <section class="hero" id="top">
+    <div class="wrap">
+      <p class="eyebrow reveal">Toronto, Canada</p>
+      <h1 class="reveal">Vahid Reza Khazaie</h1>
+      <p class="hero-role reveal">Machine Learning Engineer at the <a href="https://vectorinstitute.ai" target="_blank" rel="noopener">Vector Institute</a></p>
+      <p class="hero-lede reveal">
+        I build and evaluate large language and multimodal systems — designing benchmarks that
+        measure what models actually do, training methods that learn from less supervision, and
+        agentic pipelines that stay auditable end to end. Author of 15+ peer-reviewed papers at
+        ACM&nbsp;TIST, AAAI, WACV, ICASSP, MICCAI, and NeurIPS / ICML / ICLR workshops.
+      </p>
+
+      <div class="hero-actions reveal">
+        <a class="btn btn-primary" href="mailto:vahidrezakhazaie@gmail.com">Get in touch</a>
+        <a class="btn" href="assets/Vahid-Reza-Khazaie-Resume.pdf" target="_blank" rel="noopener">Résumé (PDF)</a>
+      </div>
+
+      <ul class="hero-links reveal">
+        <li><a href="https://scholar.google.com/citations?user=lEWvRbIAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a></li>
+        <li><a href="https://github.com/vahid0001" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/vahid0001" target="_blank" rel="noopener">LinkedIn</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ───────────────────────── FOCUS ───────────────────────── -->
+  <section class="section section-tight" aria-label="Areas of focus">
+    <div class="wrap">
+      <div class="focus-grid">
+        <article class="focus reveal">
+          <h3>Foundation model evaluation</h3>
+          <p>Benchmark design, LLM-as-a-judge harnesses, and human-aligned metrics for problems with no ground truth.</p>
+        </article>
+        <article class="focus reveal">
+          <h3>Post-training &amp; prompting</h3>
+          <p>Supervised fine-tuning, LoRA / PEFT, prompt optimization, and learned soft prompts for vision models.</p>
+        </article>
+        <article class="focus reveal">
+          <h3>Self-supervised learning</h3>
+          <p>Generative augmentation and self-learning methods that improve representations without new labels.</p>
+        </article>
+        <article class="focus reveal">
+          <h3>Agentic &amp; multimodal systems</h3>
+          <p>Tool-using agents across text, image, audio, and video with explicit handoff and verification protocols.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────────────────────── WORK ───────────────────────── -->
+  <section class="section" id="work">
+    <div class="wrap">
+      <header class="section-head reveal">
+        <h2><span class="num">01</span> Selected work</h2>
+        <p>Systems and research I designed or led, from benchmark to open-source release.</p>
+      </header>
+
+      <div class="work-grid">
+
+        <article class="card reveal">
+          <div class="card-top">
+            <h3>FairLens</h3>
+            <span class="badge">First author · 2026</span>
+          </div>
+          <p class="card-role">LLM evaluation framework</p>
+          <p>
+            Measures vision–language model behaviour on high-stakes questions across hiring, legal,
+            and healthcare settings. I designed the prompt suite — 69 closed- and open-ended prompts
+            per image — and proposed three complementary metrics: soundness against logical ground
+            truth, demographic parity, and unsupported-association rate. The automated harness
+            combines rule-based scoring with LLM-as-a-judge grading.
+          </p>
+          <ul class="stats">
+            <li><b>8</b> models evaluated</li>
+            <li><b>103K+</b> image–question pairs per model</li>
+          </ul>
+          <p class="card-meta">GPT-5.2-reasoning · Qwen2.5-VL · Qwen3-VL · InternVL3 · Ovis2.5 · LLaVA-1.6 · Llama-3.2-Vision · CogVLM</p>
+        </article>
+
+        <article class="card reveal">
+          <div class="card-top">
+            <h3>HumaniBench</h3>
+            <span class="badge">ACM TIST 2026</span>
+          </div>
+          <p class="card-role">Human-centric multimodal benchmark</p>
+          <p>
+            A benchmark suite evaluating multimodal LLMs across seven human-centred principles —
+            fairness, ethics, reasoning, robustness, and language inclusivity among them. The core
+            challenge was defining evaluation criteria in domains where no ground truth exists.
+          </p>
+          <ul class="stats">
+            <li><b>15+</b> multimodal LLMs</li>
+            <li><b>32K+</b> human-aligned pairs</li>
+          </ul>
+          <p class="card-meta">Accepted to ACM Transactions on Intelligent Systems and Technology</p>
+        </article>
+
+        <article class="card reveal">
+          <div class="card-top">
+            <h3>GenerativeSSL</h3>
+            <span class="badge">AAAI 2025</span>
+          </div>
+          <p class="card-role">Self-learning framework</p>
+          <p>
+            Combines diffusion-based generative augmentation with self-supervised learning so models
+            improve from their own generated views — no additional labels required.
+          </p>
+          <ul class="stats">
+            <li><b>+10%</b> downstream accuracy</li>
+          </ul>
+          <p class="card-meta">Published at the AAAI Conference on Artificial Intelligence</p>
+        </article>
+
+        <article class="card reveal">
+          <div class="card-top">
+            <h3>SegMate <span class="sub">(PT-SAM)</span></h3>
+            <span class="badge">ICLR 2024 · Spotlight</span>
+          </div>
+          <p class="card-role">Prompt tuning for Segment Anything</p>
+          <p>
+            Applies prompt tuning and optimization to the Segment Anything Model: learned soft
+            prompts replace manual prompting, making segmentation of complex remote-sensing imagery
+            scalable.
+          </p>
+          <ul class="stats">
+            <li><b>+25%</b> IoU, accuracy and F1 over baseline SAM</li>
+          </ul>
+          <p class="card-meta">Spotlight at the ICLR 2024 Climate Change Workshop</p>
+        </article>
+
+        <article class="card reveal">
+          <div class="card-top">
+            <h3>Multimodal multi-agent system</h3>
+            <span class="badge">Vector Institute</span>
+          </div>
+          <p class="card-role">Agentic architecture</p>
+          <p>
+            Specialized LLM agents invoke external tools and APIs for preprocessing, analysis,
+            verification, and mitigation across text, image, audio, video, and structured data. I
+            designed the agent handoff and verification protocol so outputs remain auditable —
+            supporting hiring, healthcare, and social media applications.
+          </p>
+        </article>
+
+        <article class="card reveal">
+          <div class="card-top">
+            <h3>mmlearn</h3>
+            <span class="badge">Open source</span>
+          </div>
+          <p class="card-role">Multimodal representation learning toolkit</p>
+          <p>
+            An open-source toolkit I build and maintain for multimodal representation learning, with
+            distributed multi-GPU training and reproducible large-scale evaluation on Linux / Slurm
+            clusters.
+          </p>
+          <p class="card-meta">Also: reusable GRU4Rec and NARM session-based recommender pipelines for e-commerce next-item prediction</p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────────────────────── EXPERIENCE ───────────────────────── -->
+  <section class="section section-alt" id="experience">
+    <div class="wrap">
+      <header class="section-head reveal">
+        <h2><span class="num">02</span> Experience</h2>
+        <p>Four-plus years of post-MSc industry work, five-plus years in ML research and engineering overall.</p>
+      </header>
+
+      <div class="timeline">
+
+        <article class="tl-org reveal">
+          <div class="tl-org-head">
+            <h3>Vector Institute for Artificial Intelligence</h3>
+            <span class="tl-place">Toronto, Canada</span>
+          </div>
+
+          <div class="tl-role">
+            <div class="tl-role-head">
+              <h4>Machine Learning Engineer</h4>
+              <span class="tl-date">Apr 2024 — Present</span>
+            </div>
+            <ul>
+              <li>First author of <b>FairLens</b>, an LLM evaluation framework for vision–language model behaviour on high-stakes hiring, legal, and healthcare questions.</li>
+              <li>Developed <b>HumaniBench</b>, evaluating 15+ multimodal LLMs on 32K+ human-aligned image–question pairs across seven principles — accepted to ACM TIST 2026.</li>
+              <li>Architected a <b>multimodal multi-agent system</b> where specialized LLM agents invoke external tools and APIs, with a handoff and verification protocol that keeps outputs auditable.</li>
+              <li>Led the <b>Multimodal AI</b> and <b>Anomaly Detection</b> programs end to end — requirements gathering with industry stakeholders, success metrics, and technical lead on a shared code base: <b>50 proofs of concept</b> at <b>85–90% NPS</b>.</li>
+            </ul>
+          </div>
+
+          <div class="tl-role">
+            <div class="tl-role-head">
+              <h4>Associate Machine Learning Engineer</h4>
+              <span class="tl-date">Sep 2022 — Mar 2024</span>
+            </div>
+            <ul>
+              <li>Created <b>SegMate</b>, applying prompt tuning to the Segment Anything Model (PT-SAM); learned soft prompts replaced manual prompting for 25%+ gains in IoU, accuracy, and F1 — ICLR 2024 Climate Change Workshop spotlight.</li>
+              <li>Engineered <b>GenerativeSSL</b>, combining diffusion-based generative augmentation with self-supervised learning to raise downstream accuracy by up to 10% — published at AAAI 2025.</li>
+              <li>Built and maintain <b>mmlearn</b>, an open-source multimodal representation learning toolkit with distributed multi-GPU training on Linux / Slurm clusters.</li>
+            </ul>
+          </div>
+
+          <div class="tl-role">
+            <div class="tl-role-head">
+              <h4>Machine Learning Intern</h4>
+              <span class="tl-date">Jun 2022 — Aug 2022</span>
+            </div>
+            <ul>
+              <li>Implemented sequential and session-based <b>recommender systems</b> (GRU4Rec, NARM) for e-commerce next-item prediction, delivered as a documented, reusable open-source code base with reproducible training and evaluation pipelines.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="tl-org reveal">
+          <div class="tl-org-head">
+            <h3>Mitacs</h3>
+            <span class="tl-place">London, Canada</span>
+          </div>
+          <div class="tl-role">
+            <div class="tl-role-head">
+              <h4>Machine Learning Intern</h4>
+              <span class="tl-date">Aug 2021 — Jan 2022</span>
+            </div>
+            <ul>
+              <li>Improved barcode recognition accuracy on driver's licenses by <b>20%</b> with a customized U-Net trained on a synthetic dataset generated through histogram matching and a targeted augmentation pipeline — removing the need for costly manual data collection.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="tl-org reveal">
+          <div class="tl-org-head">
+            <h3>Western University</h3>
+            <span class="tl-place">London, Canada</span>
+          </div>
+          <div class="tl-role">
+            <div class="tl-role-head">
+              <h4>Graduate Research Assistant</h4>
+              <span class="tl-date">Jun 2020 — Jun 2022</span>
+            </div>
+            <ul>
+              <li>Proposed an adversarial-masked context autoencoder for unsupervised anomaly detection, training a masking network adversarially against the reconstruction objective — <b>+10% AUC</b> over prior state of the art, published at WACV 2022.</li>
+              <li>Designed an identity-preserving super-resolution network that improved face recognition on extremely low-resolution inputs (11×8 pixels) by <b>14%</b> on cumulative match characteristic over an SRGAN baseline.</li>
+            </ul>
+          </div>
+          <div class="tl-role">
+            <div class="tl-role-head">
+              <h4>Graduate Teaching Assistant</h4>
+              <span class="tl-date">Jan 2021 — Apr 2022</span>
+            </div>
+            <ul>
+              <li>CS9542 — Advanced Artificial Intelligence (Winter 2022).</li>
+              <li>CS1026 — Computer Science Fundamentals I, Python programming (Winter 2021, Fall 2021).</li>
+            </ul>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────────────────────── PUBLICATIONS ───────────────────────── -->
+  <section class="section" id="publications">
+    <div class="wrap">
+      <header class="section-head reveal">
+        <h2><span class="num">03</span> Publications</h2>
+        <p>
+          Peer-reviewed work at ACM TIST, AAAI, WACV, ICASSP, MICCAI, and NeurIPS / ICML / ICLR
+          workshops. Full list and citation counts on
+          <a href="https://scholar.google.com/citations?user=lEWvRbIAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>.
+        </p>
+      </header>
+
+      <ol class="pubs">
+        <li class="pub reveal">
+          <span class="pub-year">2026</span>
+          <div class="pub-body">
+            <h3>FairLens: Benchmarking Fairness in Vision-Language Models for High-Stakes Decision-Making</h3>
+            <p class="pub-authors"><b>Khazaie V.R.</b>, Radwan A.Y., Raza S.</p>
+          </div>
+        </li>
+        <li class="pub reveal">
+          <span class="pub-year">2026</span>
+          <div class="pub-body">
+            <h3>HumaniBench: A Human-Centric Framework for Large Multimodal Models Evaluation</h3>
+            <p class="pub-authors">Raza S., Narayanan A., <b>Khazaie V.R.</b>, et al.</p>
+            <p class="pub-venue">ACM Transactions on Intelligent Systems and Technology (TIST)</p>
+          </div>
+        </li>
+        <li class="pub reveal">
+          <span class="pub-year">2025</span>
+          <div class="pub-body">
+            <h3>Bias in the Picture: Benchmarking VLMs with Social-Cue News Images and LLM-as-Judge Assessment</h3>
+            <p class="pub-authors">Narayanan A., <b>Khazaie V.R.</b>, et al.</p>
+            <p class="pub-venue">NeurIPS 2025 Workshop on Evaluating the Evolving LLM Lifecycle</p>
+          </div>
+        </li>
+        <li class="pub reveal">
+          <span class="pub-year">2025</span>
+          <div class="pub-body">
+            <h3>LinguaMark: Do Multimodal Models Speak Fairly? A Benchmark-Based Evaluation</h3>
+            <p class="pub-authors">Raval A., Narayanan A., <b>Khazaie V.R.</b>, et al.</p>
+            <p class="pub-venue">NeurIPS 2025 Workshop on Evaluating the Evolving LLM Lifecycle</p>
+          </div>
+        </li>
+        <li class="pub reveal">
+          <span class="pub-year">2025</span>
+          <div class="pub-body">
+            <h3>Advancing Medical Representation Learning Through High-Quality Data</h3>
+            <p class="pub-authors">Baghbanzadeh N., …, <b>Khazaie V.R.</b>, et al.</p>
+            <p class="pub-venue">MICCAI — Medical Image Computing and Computer-Assisted Intervention</p>
+          </div>
+        </li>
+        <li class="pub reveal">
+          <span class="pub-year">2025</span>
+          <div class="pub-body">
+            <h3>Benchmarking Vision-Language Contrastive Methods for Medical Representation Learning</h3>
+            <p class="pub-authors">Roy S., Parhizkar Y., Ogidi F., <b>Khazaie V.R.</b>, et al.</p>
+            <p class="pub-venue">ICML 2025 Workshop on Multi-modal Foundation Models and LLMs for Life Sciences</p>
+          </div>
+        </li>
+        <li class="pub reveal">
+          <span class="pub-year">2025</span>
+          <div class="pub-body">
+            <h3>Can Generative Models Improve Self-Supervised Representation Learning?</h3>
+            <p class="pub-authors">Ayromlou S., <b>Khazaie V.R.</b>, et al.</p>
+            <p class="pub-venue">Proceedings of the AAAI Conference on Artificial Intelligence</p>
+          </div>
+        </li>
+
+        <li class="pub reveal is-more" hidden>
+          <span class="pub-year">2024</span>
+          <div class="pub-body">
+            <h3>SegMate: Prompt-Tuned Segment Anything Model (PT-SAM)</h3>
+            <p class="pub-venue">ICLR 2024 Climate Change AI Workshop — Spotlight</p>
+          </div>
+        </li>
+        <li class="pub reveal is-more" hidden>
+          <span class="pub-year">2022</span>
+          <div class="pub-body">
+            <h3>One-Class Learned Encoder-Decoder Network with Adversarial Context Masking for Novelty Detection</h3>
+            <p class="pub-authors">Jewell J.T., <b>Khazaie V.R.</b>, et al.</p>
+            <p class="pub-venue">IEEE/CVF Winter Conference on Applications of Computer Vision (WACV)</p>
+          </div>
+        </li>
+        <li class="pub reveal is-more" hidden>
+          <span class="pub-year">2022</span>
+          <div class="pub-body">
+            <h3>Multi-Scale Identity-Preserving Image-to-Image Translation Network for Low-Resolution Face Recognition</h3>
+            <p class="pub-venue">35th Canadian Conference on Artificial Intelligence</p>
+          </div>
+        </li>
+        <li class="pub reveal is-more" hidden>
+          <span class="pub-year">2022</span>
+          <div class="pub-body">
+            <h3>Anomaly Detection with Adversarially Learned Perturbations of Latent Space</h3>
+            <p class="pub-venue">19th Conference on Robots and Vision (CRV)</p>
+          </div>
+        </li>
+        <li class="pub reveal is-more" hidden>
+          <span class="pub-year">2021</span>
+          <div class="pub-body">
+            <h3>Fast Inverse Mapping of Face GANs</h3>
+            <p class="pub-authors">Bayat N., <b>Khazaie V.R.</b>, et al.</p>
+            <p class="pub-venue">IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)</p>
+          </div>
+        </li>
+        <li class="pub reveal is-more" hidden>
+          <span class="pub-year">2021</span>
+          <div class="pub-body">
+            <h3>Latent Vector Recovery of Audio GANs with Application in Deepfake Audio Detection</h3>
+            <p class="pub-venue">34th Canadian Conference on Artificial Intelligence</p>
+          </div>
+        </li>
+        <li class="pub reveal is-more" hidden>
+          <span class="pub-year">2020</span>
+          <div class="pub-body">
+            <h3>Early Diagnosis of Alzheimer's Dementia with the Artificial Intelligence-Based Integrated Cognitive Assessment</h3>
+            <p class="pub-venue">Alzheimer's &amp; Dementia</p>
+          </div>
+        </li>
+      </ol>
+
+      <button class="btn btn-ghost" id="morePubs" type="button" aria-expanded="false">Show earlier publications</button>
+    </div>
+  </section>
+
+  <!-- ───────────────────────── ABOUT ───────────────────────── -->
+  <section class="section section-alt" id="about">
+    <div class="wrap about-wrap">
+
+      <div class="about-main reveal">
+        <header class="section-head">
+          <h2><span class="num">04</span> About</h2>
+        </header>
+        <p>
+          I'm an applied scientist with 4+ years of post-MSc industry experience building LLM, NLP,
+          and multimodal systems for business applications, and 5+ years in machine learning research
+          and engineering overall.
+        </p>
+        <p>
+          My work sits in the core LLM stack: evaluating foundation models at scale, prompt
+          engineering and optimization, fine-tuning and post-training, and self-supervised methods —
+          with additional experience in recommender systems and retrieval-augmented generation.
+        </p>
+        <p>
+          What I enjoy most is owning ambiguous problems end to end: proposing the evaluation
+          framework and success criteria, shipping production-quality code, iterating quickly on
+          feedback, and explaining the result to technical and non-technical audiences alike.
+        </p>
+
+        <h3 class="sub-head">Education</h3>
+        <div class="edu">
+          <div class="edu-item">
+            <div class="edu-head">
+              <h4>MSc, Computer Science</h4>
+              <span class="tl-date">Jan 2021 — Jun 2022</span>
+            </div>
+            <p class="edu-org">Western University, London, Canada · GPA 4.0 / 4.0</p>
+            <p class="edu-note">Thesis: <i>Solving Challenges in Deep Unsupervised Methods for Anomaly Detection</i></p>
+          </div>
+          <div class="edu-item">
+            <div class="edu-head">
+              <h4>BSc, Computer Engineering</h4>
+              <span class="tl-date">Sep 2015 — Sep 2019</span>
+            </div>
+            <p class="edu-org">Rajaee University, Tehran, Iran</p>
+            <p class="edu-note">Final project: <i>Improving Occluded Object Recognition with GANs</i></p>
+          </div>
+        </div>
+
+        <h3 class="sub-head">Awards</h3>
+        <ul class="awards">
+          <li><b>Mitacs Accelerate Fellowship</b> — 15K CAD <span class="tl-date">2021</span></li>
+          <li><b>Western Graduate Financial Package</b> — 45.2K CAD <span class="tl-date">2021 — 2022</span></li>
+        </ul>
+      </div>
+
+      <aside class="about-side reveal">
+        <h3 class="sub-head">Skills</h3>
+
+        <div class="skill-group">
+          <h4>LLMs &amp; NLP</h4>
+          <ul class="tags">
+            <li>Transformers</li><li>Prompt engineering</li><li>SFT</li><li>LoRA / PEFT</li>
+            <li>LLM evaluation</li><li>Benchmark design</li><li>LLM-as-a-judge</li><li>RAG</li>
+            <li>Information retrieval</li><li>Agentic workflows</li><li>Tool / API use</li>
+            <li>Text classification</li><li>NER</li>
+          </ul>
+        </div>
+
+        <div class="skill-group">
+          <h4>Machine learning</h4>
+          <ul class="tags">
+            <li>Deep learning</li><li>Self-supervised learning</li><li>Recommender systems</li>
+            <li>Reinforcement learning</li><li>Diffusion models</li><li>GANs</li>
+            <li>Anomaly detection</li><li>Computer vision</li><li>Multimodal representation learning</li>
+          </ul>
+        </div>
+
+        <div class="skill-group">
+          <h4>Programming &amp; frameworks</h4>
+          <ul class="tags">
+            <li>Python</li><li>C++</li><li>Bash</li><li>SQL</li><li>PyTorch</li>
+            <li>PyTorch Lightning</li><li>Hugging Face</li><li>TensorFlow</li>
+            <li>scikit-learn</li><li>NumPy</li><li>Pandas</li>
+          </ul>
+        </div>
+
+        <div class="skill-group">
+          <h4>Infrastructure &amp; analysis</h4>
+          <ul class="tags">
+            <li>Linux / Unix</li><li>Git</li><li>Docker</li><li>Slurm</li>
+            <li>Multi-GPU distributed training</li><li>CI/CD</li><li>Model serving</li>
+            <li>A/B testing</li><li>Hypothesis testing</li>
+          </ul>
+        </div>
+
+        <div class="skill-group">
+          <h4>Languages</h4>
+          <ul class="tags"><li>English</li><li>Persian</li></ul>
+        </div>
+      </aside>
+
+    </div>
+  </section>
+
+  <!-- ───────────────────────── CONTACT ───────────────────────── -->
+  <section class="section contact" id="contact">
+    <div class="wrap reveal">
+      <h2 class="contact-head">Let's talk</h2>
+      <p class="contact-lede">
+        Open to conversations about LLM evaluation, multimodal systems, and applied research roles.
+        The fastest way to reach me is email.
+      </p>
+      <p class="contact-mail">
+        <a href="mailto:vahidrezakhazaie@gmail.com">vahidrezakhazaie@gmail.com</a>
+      </p>
+      <ul class="hero-links contact-links">
+        <li><a href="https://www.linkedin.com/in/vahid0001" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://github.com/vahid0001" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="https://scholar.google.com/citations?user=lEWvRbIAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a></li>
+        <li><a href="assets/Vahid-Reza-Khazaie-Resume.pdf" target="_blank" rel="noopener">Résumé</a></li>
+      </ul>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <p>© <span id="year">2026</span> Vahid Reza Khazaie</p>
+    <p>Toronto, Ontario, Canada</p>
+  </div>
+</footer>
+
+<script src="assets/main.js"></script>
+</body>
+</html>
