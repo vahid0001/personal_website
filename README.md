@@ -44,13 +44,16 @@ The site is deployed as a **user site** at `https://vahidrezakhazaie.github.io/`
 That URL is derived from the GitHub account name, so it requires three settings
 changes, in this order:
 
-1. **Rename the account.** Settings → Account → *Change username*:
+1. **Make `main` the default branch.** Settings → General → *Default branch* →
+   switch to `main`. (The repository was created empty, so GitHub pointed HEAD at
+   whichever branch was pushed first.)
+2. **Rename the account.** Settings → Account → *Change username*:
    `vahid0001` → `vahidrezakhazaie`. GitHub redirects the old profile and repo
    URLs afterwards.
-2. **Rename this repository.** Settings → General → *Repository name*:
+3. **Rename this repository.** Settings → General → *Repository name*:
    `personal_website` → `vahidrezakhazaie.github.io`. The name must match the
    username exactly, or GitHub serves it as a project site on a sub-path instead.
-3. **Turn on Pages.** Settings → Pages → *Source: Deploy from a branch* →
+4. **Turn on Pages.** Settings → Pages → *Source: Deploy from a branch* →
    branch `main`, folder `/ (root)` → **Save**.
 
 The site is live a minute or so later. Every subsequent push to `main`
