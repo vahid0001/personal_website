@@ -40,34 +40,29 @@ approach, different endpoint.
 
 ## 2. Publish on GitHub Pages
 
-Free, no build minutes, and it serves straight from a branch.
+The site is deployed as a **user site** at `https://vahidrezakhazaie.github.io/`.
+That URL is derived from the GitHub account name, so it requires three settings
+changes, in this order:
 
-**Enable it:** repo → **Settings** → **Pages** → *Source: Deploy from a branch* →
-pick the branch and the `/ (root)` folder → **Save**. Live in about a minute.
+1. **Rename the account.** Settings → Account → *Change username*:
+   `vahid0001` → `vahidrezakhazaie`. GitHub redirects the old profile and repo
+   URLs afterwards.
+2. **Rename this repository.** Settings → General → *Repository name*:
+   `personal_website` → `vahidrezakhazaie.github.io`. The name must match the
+   username exactly, or GitHub serves it as a project site on a sub-path instead.
+3. **Turn on Pages.** Settings → Pages → *Source: Deploy from a branch* →
+   branch `main`, folder `/ (root)` → **Save**.
 
-### Getting your full name into the URL
+The site is live a minute or so later. Every subsequent push to `main`
+redeploys it automatically.
 
-The URL comes from your GitHub **username**, not the repository name. A repo
-named `<username>.github.io` is served at the root of that username's domain:
+### Custom domain (optional, later)
 
-| GitHub username | Repository name | Resulting URL |
-| --- | --- | --- |
-| `vahid0001` | `personal_website` | `vahid0001.github.io/personal_website/` |
-| `vahid0001` | `vahid0001.github.io` | `vahid0001.github.io/` |
-| `vahidrezakhazaie` | `vahidrezakhazaie.github.io` | `vahidrezakhazaie.github.io/` |
-
-So a full-name URL means renaming the **account** under
-**Settings → Account → Change username**, then naming the repo to match. GitHub
-redirects your old profile and repo links, though any hardcoded links others
-have to your old username eventually go stale.
-
-A custom domain avoids the username question entirely and reads better on a
-résumé: buy `vahidrezakhazaie.com` (roughly $10–15/year), add it under
-**Settings → Pages → Custom domain**, point a DNS `CNAME` record at
-`<username>.github.io`, and tick *Enforce HTTPS*. GitHub issues the certificate
-free.
-
-Nothing in this codebase depends on the name either way — every path is relative.
+A domain avoids depending on the account name at all: buy
+`vahidrezakhazaie.com` (roughly $10–15/year), add it under Settings → Pages →
+*Custom domain*, point a DNS `CNAME` record at `vahidrezakhazaie.github.io`,
+and tick *Enforce HTTPS*. GitHub issues the certificate free. Nothing in this
+codebase needs changing — every path is relative.
 
 ## Working on it locally
 
